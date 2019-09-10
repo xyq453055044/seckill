@@ -34,28 +34,12 @@ public class SampleController {
 
     // 1.rest api json 输出  2.页面
 
-
-//    @RequestMapping("/hello")
-//    public String hello(){
-//        Result.success(data);
-//        return new Result(0, "success", "hello,imooc");
-//    }
-//
     @RequestMapping("/hello")
     @ResponseBody
     public Result<String> hello(){
         return Result.success("hello,imooc");
 
     }
-
-
-//    @RequestMapping("/helloError")
-//    public String hello(){
-//        Result.
-//        return new Result(500100, "session失效");
-//        return new Result(500101, "XXX");
-//        return new Result(500102, "XXX");
-//    }
 
     @RequestMapping("/helloError")
     @ResponseBody
@@ -76,23 +60,6 @@ public class SampleController {
         userService.tx();
         return Result.success(true);
     }
-
-//    @RequestMapping("/redis/get")
-//    @ResponseBody
-//    public Result<Long> redisGet(){
-//        Long v1 = redisService.get("key1", Long.class);
-//        return Result.success(v1);
-//    }
-//
-//    @RequestMapping("/redis/set")
-//    @ResponseBody
-//    public Result<String> redisSet(){
-//        boolean ret = redisService.set("key2", "hello,xyq");
-//        String str = redisService.get("key2", String.class);
-//
-//        return Result.success(str);
-//    }
-
 
     @RequestMapping("/redis/get")
     @ResponseBody

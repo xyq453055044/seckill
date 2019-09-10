@@ -68,44 +68,8 @@ public class MiaoshaController {
 
         // 减库存 下订单 写入秒杀订单
         OrderInfo orderInfo = miaoshaService.miaosha(user, goods);
-        //model.addAttribute("orderInfo", orderInfo);
-        // model.addAttribute("goods", goods);
-
 
         return Result.success(orderInfo);
     }
 
-//
-//    @RequestMapping("/do_miaosha")
-//    public String list(Model model, MiaoshaUser user,
-//                       @RequestParam("goodsId") long goodsId){
-//        model.addAttribute("user", user);
-//        if (user == null){
-//            return "login";
-//        }
-//
-//        // 判断库存
-//        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
-//        int stock = goods.getStockCount();
-//        if (stock <= 0){
-//            model.addAttribute("errmsg", CodeMsg.MIAO_SHA_OVER.getMsg());
-//            return "miaosha_fail";
-//        }
-//
-//        // 判断是否已经秒杀到了
-//        MiaoshaOrder order = orderService.getMiaoshaOrderByUserIdGoodsId(user.getId(), goodsId);
-//        if (order != null){
-//            model.addAttribute("errmsg", CodeMsg.REPEATE_MIAOSHA.getMsg());
-//            return "miaosha_fail";
-//        }
-//
-//        // 减库存 下订单 写入秒杀订单
-//        OrderInfo orderInfo = miaoshaService.miaosha(user, goods);
-//        model.addAttribute("orderInfo", orderInfo);
-//        model.addAttribute("goods", goods);
-//        System.out.println("orderInfoId= " + orderInfo.getId());
-//
-//
-//        return "order_detail";
-//    }
 }
